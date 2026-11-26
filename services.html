@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deqiong — Tibetan Linguistics &amp; Language Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1b3b5f;
+      --accent: #821d1d;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --ink: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 0.95rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    .nav-links a {
+      margin-left: 1.25rem;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    main {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4.5rem;
+    }
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.4rem;
+      margin-bottom: 2.4rem;
+    }
+    .eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.45rem;
+      color: var(--primary);
+      line-height: 1.15;
+      margin-bottom: 0.85rem;
+    }
+    .hero p {
+      color: #475569;
+      max-width: 780px;
+      margin-bottom: 1.4rem;
+    }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .btn-main { background: var(--primary); color: #fff; }
+    .btn-main:hover { background: #2c5e8a; }
+    .btn-sub { border: 1px solid var(--border); color: var(--primary); background: #fff; }
+    .btn-sub:hover { border-color: var(--primary); }
+
+    h2.sec-title {
+      font-size: 1.25rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 0.4rem;
+      margin: 2.2rem 0 1.2rem;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.2rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem;
+    }
+    .card-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.35rem;
+    }
+    .card h3 {
+      font-size: 1.05rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .card p, .card li {
+      font-size: 0.9rem;
+      color: #475569;
+    }
+    .card ul { padding-left: 1.1rem; margin-top: 0.4rem; }
+    .card li { margin-bottom: 0.3rem; }
+
+    .case-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.1rem;
+    }
+    .case-head {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+    .case-title { font-weight: 700; font-size: 1.05rem; color: var(--primary); }
+    .case-badge {
+      background: #eef2f7;
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+    }
+    .case-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .case-table th, .case-table td {
+      text-align: left;
+      padding: 0.55rem 0.6rem;
+      border-top: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .case-table th {
+      width: 150px;
+      color: var(--ink);
+      font-weight: 600;
+      background: #f8fafc;
+    }
+    .case-table td { color: #475569; }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      font-size: 0.84rem;
+      border-top: 1px solid var(--border);
+      background: #fff;
+    }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.85rem; }
+      .case-table th { width: 110px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#" class="brand">DEQIONG · LANGUAGE SERVICES</a>
+    <div class="nav-links">
+      <a href="#profile">Profile</a>
+      <a href="#services">Services</a>
+      <a href="#cases">Sample Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="profile">
+    <div class="eyebrow">01. Professional Profile</div>
+    <h1>Deqiong — Tibetan Linguistics &amp; Language Services</h1>
+    <p>
+      Linguistics specialist (M.A. in Tibetan Studies, Minzu University of China, 88.71/100; B.A. in English, BLCU) and 2026 LSA Emmon Bach Fellow. Native speaker of <strong>Tibetan (Standard/Central &amp; Khams Biru)</strong> and <strong>Mandarin Chinese</strong>, fluent in <strong>English</strong>. I partner with AI research teams, academic projects, and educational organizations on high-accuracy language data, multimodal annotation, phonetic analysis, and bilingual curriculum delivery.
+    </p>
+    <div class="btn-row">
+      <a href="mailto:dhejoan889@gmail.com" class="btn btn-main">Hire / Project Inquiry</a>
+      <a href="index.html" class="btn btn-sub">Academic Portfolio</a>
+      <a href="Deqiong_CV.pdf" class="btn btn-sub" target="_blank">View CV (PDF)</a>
+    </div>
+  </section>
+
+  <h2 class="sec-title" id="services">Core Service Areas</h2>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-tag">02. Language Documentation</div>
+      <h3>Tibetan Dialect Fieldwork &amp; Archiving</h3>
+      <ul>
+        <li>High-fidelity audio/video recording of Biru (Khams) and Central Tibetan speech, oral stories, songs, and rituals.</li>
+        <li>Accurate Tibetan-script transcription, Wylie transliteration, IPA coding, and Mandarin/English translation.</li>
+        <li>Community-collaborative documentation workflows &amp; ethical metadata management.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-tag">03. AI Language Data</div>
+      <h3>LLM Evaluation, Speech Data &amp; QA</h3>
+      <ul>
+        <li>Tibetan &amp; Mandarin Chinese speech data collection, verbatim transcription, and audio quality auditing.</li>
+        <li>Bilingual prompt/response evaluation (RLHF), cultural appropriateness review, and translationese detection.</li>
+        <li>Rubric-aligned linguistic QA and structured English rationale writing under strict NDA compliance.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-tag">04. Research Support</div>
+      <h3>Acoustic, Phonological &amp; Corpus Analysis</h3>
+      <ul>
+        <li><strong>Praat:</strong> F0 pitch contour extraction, spectrogram inspection, and tonal/segmental measurements.</li>
+        <li><strong>ELAN:</strong> Time-aligned multi-tier audiovisual segmentation and annotation.</li>
+        <li><strong>FLEx:</strong> Lexical database building and Leipzig-compliant interlinear glossing.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-tag">05. Education &amp; Curriculum</div>
+      <h3>Bilingual Teaching &amp; Curriculum Design</h3>
+      <ul>
+        <li>Tibetan language instruction for adult learners (spoken fluency, script, and cultural context).</li>
+        <li>English instruction (K–12) and bilingual instructional material &amp; workbook development.</li>
+        <li>Academic proofreading, editing, and bilingual assessment rubrics.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="sec-title" id="cases">06. Sample Projects (Anonymized &amp; Authorized)</h2>
+
+  <div class="case-card">
+    <div class="case-head">
+      <div class="case-title">Case 1: Biru Khams Tibetan Phonetic &amp; Dialect Documentation</div>
+      <span class="case-badge">Language Documentation · Research Support</span>
+    </div>
+    <table class="case-table">
+      <tr><th>Project Need</th><td>Systematic phonetic description and historical comparison of an under-documented Tibetan variety in Nagqu.</td></tr>
+      <tr><th>Work Completed</th><td>Conducted primary field elicitation across sub-varieties (Nagshö &amp; Jieshou); ran Praat acoustic/F0 analysis and Old Tibetan comparative reconstruction.</td></tr>
+      <tr><th>Deliverables</th><td>Annotated phonetic/lexical dataset, Praat acoustic measurements, thesis monograph, and peer-reviewed conference paper (IATS 2026).</td></tr>
+      <tr><th>Quality Proof</th><td>Master’s thesis awarded "Excellent" Distinction (MUC); peer-reviewed abstract accepted for IATS 2026; LSA Emmon Bach Fellowship (CoLang 2026).</td></tr>
+    </table>
+  </div>
+
+  <div class="case-card">
+    <div class="case-head">
+      <div class="case-title">Case 2: Multimodal Corpus &amp; Low-Resource Speech Data Pipeline</div>
+      <span class="case-badge">AI Language Data · Multimodal Annotation</span>
+    </div>
+    <table class="case-table">
+      <tr><th>Project Need</th><td>Standardized, time-aligned trilingual annotation workflows suitable for digital archiving and low-resource speech/AI training.</td></tr>
+      <tr><th>Work Completed</th><td>Applied CoLang 2026 standards in ELAN and FLEx (Tibetan script, Wylie, IPA, Chinese/English tiers) alongside raw audio quality validation and bilingual QA guidelines.</td></tr>
+      <tr><th>Deliverables</th><td>Time-aligned ELAN (.eaf) templates, FLEx lexical glossing schemas, and structured QA error-tagging checklists.</td></tr>
+      <tr><th>Quality Proof</th><td>Completed 3-week intensive CoLang 2026 training (UNR) and 40-hour SICL 2026 advanced workshop (Nankai &amp; Yunnan Minzu Universities).</td></tr>
+    </table>
+  </div>
+
+  <div class="case-card">
+    <div class="case-head">
+      <div class="case-title">Case 3: Adult Tibetan &amp; Bilingual English Curriculum Delivery</div>
+      <span class="case-badge">Education &amp; Curriculum</span>
+    </div>
+    <table class="case-table">
+      <tr><th>Project Need</th><td>Structured bilingual language instruction, curriculum materials, and teaching quality management for diverse learners (2023–2026).</td></tr>
+      <tr><th>Work Completed</th><td>Taught Tibetan to adult learners and English to K–12 students; developed lesson frameworks, coordinated teaching staff, and proofread bilingual materials.</td></tr>
+      <tr><th>Deliverables</th><td>Course syllabi, graded bilingual exercises, teacher coordination schedules, and quality-assessment reports.</td></tr>
+      <tr><th>Quality Proof</th><td>Nearly 3 years of continuous academic coordination and high student retention across multi-level cohorts.</td></tr>
+    </table>
+  </div>
+
+  <h2 class="sec-title" id="contact">Contact &amp; Availability</h2>
+  <div class="card">
+    <p>
+      Available for remote AI linguistic evaluation, Tibetan/Mandarin speech &amp; text annotation, research support, and bilingual curriculum consulting. All client data is handled strictly under NDA.
+    </p>
+    <p style="margin-top:0.6rem;"><strong>Email:</strong> <a href="mailto:dhejoan889@gmail.com" style="color:var(--accent); font-weight:600;">dhejoan889@gmail.com</a></p>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Deqiong · Tibetan Linguistics &amp; Language Services
+</footer>
+
+</body>
+</html>
