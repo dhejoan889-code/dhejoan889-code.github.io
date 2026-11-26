@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deqiong | Tibetan Documentary Linguistics &amp; Phonology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+Tibetan:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1b3b5f;
+      --accent: #2c5e8a;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .tibetan {
+      font-family: 'Noto Serif Tibetan', 'Kailasa', serif;
+      line-height: 1.9;
+    }
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+    nav a {
+      margin-left: 1.4rem;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--primary); }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+    }
+    .hero h1 {
+      font-size: 2.1rem;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1.1rem;
+    }
+    .hero p {
+      color: #334155;
+      margin-bottom: 1.4rem;
+      max-width: 780px;
+    }
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.55rem 1.15rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+    }
+    .btn-primary:hover { background: var(--accent); }
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--primary);
+      background: #ffffff;
+    }
+    .btn-outline:hover {
+      border-color: var(--primary);
+      background: #f1f5f9;
+    }
+    section { margin-bottom: 2.5rem; }
+    h2.sec-title {
+      font-size: 1.25rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.4px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 4px rgba(15, 23, 42, 0.03);
+    }
+    .card h3 {
+      font-size: 1.05rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      font-size: 0.92rem;
+      color: #475569;
+      margin-bottom: 0.7rem;
+    }
+    .media-box {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      margin-top: 0.75rem;
+      background: #f1f5f9;
+    }
+    .media-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .caption {
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 0.5rem 0.75rem;
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+    }
+    .item-list {
+      list-style: none;
+    }
+    .item-list li {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem 1.35rem;
+      margin-bottom: 0.85rem;
+    }
+    .item-title {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+    .item-meta {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .tag {
+      background: #e2e8f0;
+      color: #1e293b;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+    }
+    @media (max-width: 640px) {
+      .hero { padding: 1.5rem; }
+      .hero h1 { font-size: 1.7rem; }
+      nav a { margin-left: 0.85rem; font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <a href="#" class="brand">DEQIONG</a>
+    <nav>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#training">Training &amp; Awards</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Deqiong</h1>
+    <div class="subtitle">Tibetan Documentary Linguistics · Acoustic &amp; Historical Phonology · Digital Archiving</div>
+    <p>
+      I am a linguist holding an M.A. in Tibetan Studies (Linguistics Specialization) from Minzu University of China (88.71/100; "Excellent" Thesis) and a B.A. in English from Beijing Language and Culture University, and a 2026 <strong>LSA Emmon Bach Fellow</strong> (CoLang 2026). My research focuses on the <strong>Biru ('Bri-ru) Khams Tibetan dialect</strong> in Nagqu—bridging Praat acoustic analysis and historical phonology with community-based multimodal documentation of folktales, folk songs, and traditional rituals.
+    </p>
+    <div class="btn-group">
+      <a href="Deqiong_CV.pdf" class="btn btn-primary" target="_blank">Download CV (PDF)</a>
+      <a href="mailto:dhejoan889@gmail.com" class="btn btn-outline">Email Me</a>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2 class="sec-title">Research &amp; Fieldwork Showcase</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>1. Study Area: Biru ('Bri-ru), Nagqu</h3>
+        <p>
+          Located at the crossroads of Khams and Central Tibetan, Biru Tibetan exhibits internal sub-dialectal diversity (e.g., Nagshö and Jieshou) and contact-induced shifts under Central (Lhasa) Tibetan and Mandarin Chinese influence.
+        </p>
+        <div class="media-box">
+          <img src="biru-map.png" alt="Map of Biru County ('Bri-ru) in Nagqu, Tibet" onerror="this.style.display='none'">
+          <div class="caption">Figure 1. Fieldwork site: Biru County ('Bri-ru), Nagqu, Tibet Autonomous Region (QGIS).</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>2. Phonetics &amp; Historical Phonology</h3>
+        <p>
+          Master's thesis (<em>A Phonetic Study of the Biru Dialect in Nagqu, Tibet</em>, awarded "Excellent" Distinction) used <strong>Praat</strong> acoustic analysis and historical comparison to examine Old Tibetan <em>bj-</em> reflexes, consonant lenition, vowel splits, and contact-induced tonogenesis.
+        </p>
+        <div class="media-box">
+          <img src="praat-sample.png" alt="Praat acoustic and F0 pitch analysis sample" onerror="this.style.display='none'">
+          <div class="caption">Acoustic &amp; F0 pitch analysis workflow in Praat (Nagshö vs. Jieshou sub-varieties).</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>3. Multimodal Documentation &amp; Community Workflow</h3>
+        <p>
+          Building a community-collaborative digital archive of Biru oral traditions—folktales, work and folk songs, ritual chants, and local ecological knowledge—annotated in <strong>ELAN</strong> and <strong>FLEx</strong> (Tibetan script, Wylie, IPA, Chinese/English) with tiered access ethics and a replicable toolkit for other Tibetan communities.
+        </p>
+        <div class="media-box">
+          <img src="elan-sample.png" alt="ELAN multi-tier annotation workflow" onerror="this.style.display='none'">
+          <div class="caption">Multimodal annotation pipeline (ELAN / FLEx / OLAC metadata &amp; tiered community access).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2 class="sec-title">Publications &amp; Conference Contributions</h2>
+    <ul class="item-list">
+      <li>
+        <div class="item-title">
+          <span class="tibetan">༄༅། །བོད་ལྗོངས་ནག་ཆུ་འབྲི་རུའི་ཡུལ་སྐད་ཀྱི་སྐད་གདངས་ལ་དཔྱད་པ།</span><br>
+          <em>An Analysis of Tone and Phonetics in the Biru Dialect of Nagqu, Tibet</em>
+        </div>
+        <div class="item-meta">
+          Peer-reviewed accepted contribution · 17th Seminar of the International Association for Tibetan Studies (IATS 2026), Aug. 23–29, 2026 · Abstract ID: 217
+        </div>
+      </li>
+      <li>
+        <div class="item-title">
+          “Nagshö (Naxiu) Biru: Experiencing the Beauty of Northern Tibet through Traditional Clothing” <em>(In Chinese)</em>
+        </div>
+        <div class="item-meta">
+          <em>Tibet Humanities and Geography</em> (Nagqu Special Issue), September 2020
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="training">
+    <h2 class="sec-title">Specialized Training, Fellowships &amp; Skills</h2>
+    <ul class="item-list">
+      <li>
+        <div class="item-title">LSA Emmon Bach Fellowship — CoLang 2026 (University of Nevada, Reno, USA)</div>
+        <div class="item-meta">June 22 – July 3, 2026 (plus Practicum through July 10, 2026) · Audiovisual documentation, ELAN, FLEx, metadata, and community-collaborative ethics</div>
+      </li>
+      <li>
+        <div class="item-title">Workshop Scholarship — Summer Institute of Chinese Linguistics (SICL 2026), Phase II</div>
+        <div class="item-meta">Aug. 6–15, 2026 · Co-hosted by Nankai University, Yunnan Minzu University &amp; The Commercial Press (40 hours; Certificate of Completion)</div>
+      </li>
+      <li>
+        <div class="item-title">Second Prize, Graduate Academic Scholarship — Minzu University of China (2020)</div>
+        <div class="item-meta">M.A. Weighted Average: 88.71/100 (Tibetan Linguistics 94, Tibetan Grammar 94, Dialect Comparison &amp; Fieldwork Methods 90)</div>
+      </li>
+    </ul>
+
+    <div class="tags">
+      <span class="tag">Praat (F0 &amp; Acoustics)</span>
+      <span class="tag">ELAN (Multimodal Annotation)</span>
+      <span class="tag">FLEx (Lexicography &amp; Glossing)</span>
+      <span class="tag">QGIS Mapping</span>
+      <span class="tag">IPA &amp; Wylie Transliteration</span>
+      <span class="tag">Leipzig Glossing Rules</span>
+      <span class="tag">Tibetan (Native: Biru Khams &amp; Central)</span>
+      <span class="tag">Mandarin Chinese (Native)</span>
+      <span class="tag">English (Fluent)</span>
+      <span class="tag">Japanese (Elementary)</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="sec-title">Contact</h2>
+    <div class="card">
+      <p>
+        I welcome inquiries regarding Ph.D. research collaboration, Tibetan documentary linguistics, and community-based digital archiving.
+      </p>
+      <p><strong>Email:</strong> <a href="mailto:dhejoan889@gmail.com">dhejoan889@gmail.com</a> · <strong>Location:</strong> Lhasa, Tibet, China</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2026 Deqiong. Built for academic &amp; documentary linguistics portfolio purposes.
+</footer>
+
+</body>
+</html>
